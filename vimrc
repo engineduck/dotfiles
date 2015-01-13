@@ -150,6 +150,13 @@ imap <C-L> <Space>=><Space>
 " Display extra whitespace
 " set list listchars=tab:»·,trail:·
 
+" Show column line
+"set colorcolumn=80
+
+" Highlight characters in lines longer than 80 chars
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " Edit routes
 command! Rroutes :e config/routes.rb
 command! Rschema :e db/schema.rb
