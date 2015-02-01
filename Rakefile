@@ -5,6 +5,7 @@ desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
   switch_to_zsh
+  install_vundle
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
   files << "oh-my-zsh/custom/plugins/rbates"
@@ -87,5 +88,14 @@ def install_oh_my_zsh
     else
       puts "skipping oh-my-zsh, you will need to change ~/.zshrc"
     end
+  end
+end
+
+def install_vundle
+  if File.exist?(File.join(ENV['HOME'], ".vim", "bundle", "Vundle.vim"))
+    puts "found ~/.vim/bundle/Vundle.vim"
+  else
+    puts "installing vundle"
+    system %Q{git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"}
   end
 end
