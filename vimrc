@@ -7,7 +7,7 @@ set nocompatible
 
 """" Begin Vundle Stuff
 
-filetype off " for vundle workaroung
+filetype off " for vundle workaround
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -15,6 +15,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
+
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 " All Plugins must be added before this line
 call vundle#end()
@@ -192,6 +194,7 @@ if executable("ack")
 endif
 
 " Color scheme
+colorscheme tomorrow-night
 " colorscheme vividchalk
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
