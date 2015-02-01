@@ -1,8 +1,28 @@
 " based on http://github.com/jferris/config_files/blob/master/vimrc
 
+
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+"""" Begin Vundle Stuff
+
+filetype off " for vundle workaroung
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" All Plugins must be added before this line
+call vundle#end()
+
+" not necessary, will be set later
+"filetype plugin indent on
+
+"""" End Vundle Stuff
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
