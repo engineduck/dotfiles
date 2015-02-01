@@ -17,6 +17,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'airblade/vim-gitgutter'
 
 " All Plugins must be added before this line
 call vundle#end()
