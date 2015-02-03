@@ -19,6 +19,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'kien/ctrlp.vim'
 
 " All Plugins must be added before this line
 call vundle#end()
@@ -178,8 +179,7 @@ imap <C-L> <Space>=><Space>
 "set colorcolumn=80
 
 " Highlight characters in lines longer than 80 chars
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match Error /\%81v.\+/
 
 " Edit routes
 command! Rroutes :e config/routes.rb
@@ -197,7 +197,6 @@ endif
 
 " Color scheme
 colorscheme tomorrow-night
-" colorscheme vividchalk
 " highlight NonText guibg=#060606
 " highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
