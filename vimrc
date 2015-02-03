@@ -18,6 +18,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " All Plugins must be added before this line
 call vundle#end()
