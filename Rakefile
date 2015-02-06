@@ -7,9 +7,9 @@ task :install do
   switch_to_zsh
   install_vundle
   replace_all = false
-  files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
-  files << "oh-my-zsh/custom/plugins/rbates"
-  files << "oh-my-zsh/custom/rbates.zsh-theme"
+  files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh Tomorrow\ Night.itermcolors]
+  files << "oh-my-zsh/custom/plugins/engineduck"
+  files << "oh-my-zsh/custom/engineduck.zsh-theme"
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
