@@ -4,7 +4,7 @@ ZSH_THEME="robbyrussell"
 plugins=(git bundler brew gem rbates)
 
 export PATH="/usr/local/bin:$PATH"
-export EDITOR='mate -w'
+export EDITOR='subl'
 
 source $ZSH/oh-my-zsh.sh
 
