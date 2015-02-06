@@ -20,6 +20,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
 
 " All Plugins must be added before this line
 call vundle#end()
