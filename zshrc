@@ -34,4 +34,4 @@ unsetopt correct_all
 alias gs='git status'
 alias gd='git diff'
 
-
+eval "$(rbenv init -)" # rbenv auto completion and stuff
