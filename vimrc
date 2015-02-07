@@ -24,19 +24,25 @@ call vundle#end()
 " Auto reload .vimrc after editing it
 autocmd! bufwritepost .vimrc source %
 
+syntax on		        " syntax highlighting
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
 " no swp files and stuff
+set noswapfile
 set nobackup
 set nowritebackup
 
-set history=50	    " keep 50 lines of command line history
-set ruler		        " always show cursor position
+set history=50      " keep 50 lines of command line history
+set ruler           " always show cursor position
 set laststatus=2    " always show status line
-set showcmd		      " show incomplete commands
+set showcmd         " show incomplete commands
+set ttimeoutlen=0
 
-set incsearch		    " do incremental searching
+set hlsearch        " highlight search term
+set incsearch       " do incremental searching
+set encoding=utf-8
 
 " case only matters with mixed case expressions
 set ignorecase
@@ -46,8 +52,9 @@ set smartcase
 set number
 set numberwidth=4
 
-syntax on		        " syntax highlighting
-set hlsearch		    " highlight search term
+" Display whitespace
+set list
+set listchars=tab:▸\ ,trail:·,nbsp:·
 
 " Highlight characters in lines longer than 80 chars
 match Error /\%81v.\+/
@@ -102,3 +109,7 @@ endif
 nmap <F1> <Esc>
 
 
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+
+let g:ctrlp_custom_ignore = '\.pyc$\|\.beam$\'
