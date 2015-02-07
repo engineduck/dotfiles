@@ -50,7 +50,7 @@ set smartcase
 
 " Line Numbers
 set number
-set numberwidth=4
+set numberwidth=3
 
 " Display whitespace
 set list
