@@ -16,6 +16,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'PreserveNoEOL'  " for editorconfig insert_final_newline
 
 call vundle#end()
 
