@@ -71,6 +71,7 @@ set nowrap      " no line wrapping
 
 " Color scheme
 colorscheme Tomorrow-Night
+set t_Co=256
 
 if has("autocmd")
   " Enable file type detection.
