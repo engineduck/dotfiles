@@ -70,7 +70,7 @@ set expandtab
 set nowrap      " no line wrapping
 
 " Color scheme
-colorscheme tomorrow-night
+colorscheme Tomorrow-Night
 
 if has("autocmd")
   " Enable file type detection.
