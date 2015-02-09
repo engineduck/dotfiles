@@ -15,6 +15,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 
