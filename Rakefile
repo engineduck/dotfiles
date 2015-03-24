@@ -97,5 +97,5 @@ def install_vundle
     system %Q{git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"}
   end
   puts "installing vundle plugins (causes flashing)"
-  system %Q{vim +PluginInstall +qall}
+  system %Q{vim +PluginClean +PluginInstall +qall}
 end

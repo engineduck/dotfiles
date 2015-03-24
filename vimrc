@@ -17,6 +17,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'PreserveNoEOL'  " for editorconfig insert_final_newline
+"Plugin 'flazz/vim-colorschemes'
+Plugin 'jnurmine/Zenburn'
 
 call vundle#end()
 
@@ -67,10 +69,10 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-set nowrap      " no line wrapping
+" set nowrap      " no line wrapping
 
 " Color scheme
-colorscheme Tomorrow-Night
+colorscheme zenburn
 set t_Co=256
 
 if has("autocmd")
@@ -117,3 +119,4 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#whitespace#enabled = 0
 
 let g:ctrlp_custom_ignore = '\.pyc$\|\.beam$\'
+let g:ctrlp_working_path_mode = 'r' " only show files of current repository
