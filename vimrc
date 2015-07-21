@@ -10,15 +10,21 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
+Plugin 'ekalinin/Dockerfile.vim' " dockerfile highlight support
+Plugin 'kien/ctrlp.vim' " file navigation search like sublimetext
+Plugin 'bling/vim-airline' " bottom line optics
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'PreserveNoEOL'  " for editorconfig insert_final_newline
+
+" clojure stuff
+Plugin 'vim-scripts/VimClojure'
+Plugin 'tpope/vim-fireplace'
+
+" colorschemes
 "Plugin 'flazz/vim-colorschemes'
 Plugin 'jnurmine/Zenburn'
+Plugin 'chriskempson/vim-tomorrow-theme'
 
 call vundle#end()
 
