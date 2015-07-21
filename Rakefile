@@ -49,6 +49,9 @@ def link_file(file)
   elsif file =~ /zshrc$/ # copy zshrc instead of link
     puts "copying ~/.#{file}"
     system %Q{cp "$PWD/#{file}" "$HOME/.#{file}"}
+  elsif file =~ /profiles.clj$/ # link to ~/.lein/profiles.clj
+    puts "linking ~/.lein/profiles.clj"
+    system %Q{ln -s "$PWD/#{file}" "$HOME/.lein/#{file}"}
   else
     puts "linking ~/.#{file}"
     system %Q{ln -s "$PWD/#{file}" "$HOME/.#{file}"}
