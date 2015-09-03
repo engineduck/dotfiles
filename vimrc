@@ -18,7 +18,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'PreserveNoEOL'  " for editorconfig insert_final_newline
 
 " clojure stuff
-"Plugin 'vim-scripts/VimClojure'
+Plugin 'vim-scripts/VimClojure'
 "Plugin 'tpope/vim-salve'
 "Plugin 'tpope/vim-projectionist'
 "Plugin 'tpope/vim-dispatch'
