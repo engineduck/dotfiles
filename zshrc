@@ -27,6 +27,10 @@ h() { cd ~/$1; }
 _h() { _files -W ~/ -/; }
 compdef _h h
 
+c() { cd ~/projects/clojure/$1; }
+_c() { _files -W ~/ -/; }
+compdef _c c
+
 # autocorrect is more annoying than helpful
 unsetopt correct_all
 
