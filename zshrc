@@ -9,6 +9,12 @@ export EDITOR='vim'
 
 source $ZSH/oh-my-zsh.sh
 
+# apparentally needed for mactex?
+# according to brew cask it should be placed in .zprofile, but
+# zsh documentation states, that .zprofile should not change 
+# shell environment at all.
+eval `/usr/libexec/path_helper -s`
+
 if [ ! $(uname -s) = "Darwin" ]; then
   # Simulate OSX's pbcopy and pbpaste on other platforms
   alias pbcopy='xclip -sel clip -i'
