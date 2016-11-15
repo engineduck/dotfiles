@@ -1,6 +1,11 @@
 require 'rake'
 require 'erb'
 
+desc "install vundle and install plugins"
+task :vim do
+  install_vundle()
+end
+
 desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
