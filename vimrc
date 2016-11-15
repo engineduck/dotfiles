@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ekalinin/Dockerfile.vim' " dockerfile highlight support
+"Plugin 'ekalinin/Dockerfile.vim' " dockerfile highlight support
 Plugin 'kien/ctrlp.vim' " file navigation search like sublimetext
 Plugin 'bling/vim-airline' " bottom line optics
 Plugin 'editorconfig/editorconfig-vim'
@@ -22,12 +22,13 @@ Plugin 'vim-scripts/VimClojure'
 "Plugin 'tpope/vim-salve'
 "Plugin 'tpope/vim-projectionist'
 "Plugin 'tpope/vim-dispatch'
-"Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fireplace'
 
 " colorschemes
 "Plugin 'flazz/vim-colorschemes'
 Plugin 'jnurmine/Zenburn'
 Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
@@ -37,7 +38,7 @@ call vundle#end()
 " Auto reload .vimrc after editing it
 autocmd! bufwritepost .vimrc source %
 
-syntax on		        " syntax highlighting
+syntax on  " syntax highlighting
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -81,8 +82,12 @@ set expandtab
 " set nowrap      " no line wrapping
 
 " Color scheme
-colorscheme zenburn
+set background=dark
+colorscheme solarized
 set t_Co=256
+
+" set gitgutter column to use background color
+highlight clear SignColumn
 
 if has("autocmd")
   " Enable file type detection.
