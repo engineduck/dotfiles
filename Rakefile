@@ -1,16 +1,16 @@
 require 'rake'
 require 'erb'
 
-desc "install vundle and install plugins"
+desc "install vim-plug and install plugins"
 task :vim do
-  install_vundle()
+  install_vimplug()
 end
 
 desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
   switch_to_zsh
-  install_vundle
+  install_vimplug
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh Tomorrow\ Night.itermcolors]
   files.each do |file|
@@ -106,4 +106,16 @@ def install_vundle
   end
   puts "installing vundle plugins (causes flashing)"
   system %Q{vim +PluginClean +PluginInstall +qall}
+end
+
+def install_vimplug
+  if File.exist?(File.join(ENV['HOME'], ".vim", "autoload", "plug.vim"))
+    puts "found ~/.vim/autoload/plug.vim"
+  else
+    system %Q{curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim}
+
+    puts "installing vim-plug"
+  end
+  system %Q{vim +PlugClean! +PlugUpgrade +PlugUpdate +PlugInstall +qall}
 end
