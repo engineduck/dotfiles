@@ -58,9 +58,10 @@ set shiftwidth=2
 set expandtab
 
 " Color scheme
+let g:solarized_termcolors=256
+set t_Co=256
 set background=dark
 colorscheme solarized
-set t_Co=256
 
 if has("autocmd")
 
