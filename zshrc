@@ -44,8 +44,7 @@ alias gs='git status'
 alias gd='git diff'
 alias vimrc='vim ~/.vimrc'
 
-#alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vim='/usr/local/bin/nvim'
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias n='/usr/local/bin/nvim'
 
 # for lilypond
