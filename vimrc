@@ -6,21 +6,30 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible' " defaults
 
+" for tags
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-easytags'
+
+" git
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
-"Plug 'airblade/vim-gitgutter'
-"Plug 'ekalinin/Dockerfile.vim' " dockerfile highlight support
-Plug 'kien/ctrlp.vim' " file navigation search like sublimetext
+
 Plug 'bling/vim-airline' " bottom line optics
 Plug 'editorconfig/editorconfig-vim'
 Plug 'PreserveNoEOL'  " for editorconfig insert_final_newline
+"Plug 'sirver/UltiSnips'
+Plug 'Valloric/YouCompleteMe'
 
 " clojure stuff
-Plug 'vim-scripts/VimClojure'
-"Plug 'tpope/vim-salve'
-"Plug 'tpope/vim-projectionist'
-"Plug 'tpope/vim-dispatch'
+Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace'
+
+" elixir
+Plug 'elixir-lang/vim-elixir'
 
 " colorschemes
 "Plug 'flazz/vim-colorschemes'
@@ -61,6 +70,7 @@ set expandtab
 set background=dark
 colorscheme solarized
 set t_Co=256
+set guifont=Monaco:h12
 
 if has("autocmd")
 
@@ -89,3 +99,11 @@ nmap <F1> <Esc>
 
 let g:ctrlp_custom_ignore = '\.pyc$\|\.beam$\'
 let g:ctrlp_working_path_mode = 'r' " only show files of current repository
+
+" code completion
+set omnifunc=syntaxcomplete#Complete
+
+" ultisnips keybindings
+" let g:UltiSnipsExpandTrigger="<c-p>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
