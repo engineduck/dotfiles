@@ -3,7 +3,27 @@ require 'erb'
 
 desc "install vim-plug and install plugins"
 task :vim do
-  install_vimplug()
+  install_vimplug
+end
+
+desc "install leiningen"
+task :clojure do
+  install_clojure
+end
+
+desc "install YouCompleteMe for vim"
+task :completion do
+  install_completion
+end
+
+desc "install brew and applications"
+task :brew do
+  install_brew
+end
+
+desc "install brew cask applications"
+task :cask do
+  install_brew_cask
 end
 
 desc "install the dot files into user's home directory"
@@ -118,4 +138,36 @@ def install_vimplug
     puts "installing vim-plug"
   end
   system %Q{vim +PlugClean! +PlugUpgrade +PlugUpdate +PlugInstall +qall}
+end
+
+def install_completion
+  system %Q{~/.vim/plugged/YouCompleteMe/install.py --tern-completer}
+  puts "compiling YouCompleteMe"
+end
+
+def install_clojure
+  system %Q{brew install leiningen}
+end
+
+def install_brew
+  system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
+  system %Q{brew install zsh}
+  system %Q{brew install macvim}
+  system %Q{brew install neovim}
+  system %Q{brew install node}
+  system %Q{brew install ruby}
+  system %Q{brew install python}
+end
+
+def install_brew_cask
+  system %Q{brew tap caskroom/cask}
+  system %Q{brew cask install firefox}
+  system %Q{brew cask install google-chrome}
+  system %Q{brew cask install alfred}
+  system %Q{brew cask install gpgtools}
+  system %Q{brew cask install musicbrainz-picard}
+  system %Q{brew cask install xld}
+  system %Q{brew cask install flux}
+  system %Q{brew cask install atom}
+  system %Q{brew cask install dropbox}
 end
