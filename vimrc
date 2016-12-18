@@ -46,7 +46,8 @@ set noswapfile
 set nobackup
 set nowritebackup
 
-set hlsearch        " highlight search term
+" highlight search term
+set hlsearch
 
 " case only matters with mixed case expressions
 set ignorecase
@@ -67,9 +68,10 @@ set shiftwidth=2
 set expandtab
 
 " Color scheme
+let g:solarized_termcolors=256
+set t_Co=256
 set background=dark
 colorscheme solarized
-set t_Co=256
 set guifont=Monaco:h12
 
 if has("autocmd")
