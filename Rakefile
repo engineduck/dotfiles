@@ -174,7 +174,7 @@ def install_brew_cask
 end
 
 def install_spacemacs
-  system %Q{brew tap d12frosted/emacs-plus}
+  system %Q{brew tap railwaycat/emacsmacport}
   systen %Q{brew install emacs-plus}
   systen %Q{brew linkapps emacs-plus}
   system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
