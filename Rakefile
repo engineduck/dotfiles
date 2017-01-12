@@ -31,6 +31,7 @@ task :install do
   install_oh_my_zsh
   switch_to_zsh
   install_vimplug
+  install_spacemacs
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh Tomorrow\ Night.itermcolors]
   files.each do |file|
@@ -170,4 +171,11 @@ def install_brew_cask
   system %Q{brew cask install flux}
   system %Q{brew cask install atom}
   system %Q{brew cask install dropbox}
+end
+
+def install_spacemacs
+  system %Q{brew tap d12frosted/emacs-plus}
+  systen %Q{brew install emacs-plus}
+  systen %Q{brew linkapps emacs-plus}
+  system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
 end
