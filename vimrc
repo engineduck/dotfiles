@@ -4,11 +4,16 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-sensible' " defaults
+" defaults
+Plug 'tpope/vim-sensible'
 
 " for tags
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-easytags'
+
+" trying new stuff
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'terryma/vim-expand-region'
 
 " git
 Plug 'tpope/vim-git'
@@ -27,6 +32,11 @@ Plug 'tpope/vim-salve'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fireplace'
+
+" web stuff
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'othree/html5.vim'
 
 " elixir
 Plug 'elixir-lang/vim-elixir'
@@ -69,9 +79,11 @@ set expandtab
 
 " Color scheme
 let g:solarized_termcolors=256
+let g:solarized_termcolors=16
 set t_Co=256
 set background=dark
 colorscheme solarized
+
 set guifont=Monaco:h12
 
 if has("autocmd")
@@ -109,3 +121,33 @@ set omnifunc=syntaxcomplete#Complete
 " let g:UltiSnipsExpandTrigger="<c-p>"
 " let g:UltiSnipsJumpForwardTrigger="<c-b>"
 " let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" trying something new
+let mapleader = "\<Space>"
+
+" copy and paste to system clipboard
+" with <Space>p and <Space>y
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+y
+vmap <Leader>y "+y
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
+" region expand with v
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" for open file with shortcut
+"nnoremap <Leader>o :CtrlP<CR>
+set wildcharm=<C-y>
+nnoremap <Leader>o :e <C-y>
+
+" go to line 12 with 12<Enter>
+nnoremap <CR> G
+nnoremap <BS> gg
+
+" stop that window from popping up
+map q: :q

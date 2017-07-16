@@ -1,0 +1,82 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "184380e1-444d-46e8-bf43-203d0c373f22"
+    html:
+      indent_inner_html: true
+      preserve_newlines: false
+      wrap_line_length: 80
+  "autocomplete-elixir":
+    elixirPath: "/usr/local/bin"
+    erlangHome: "/usr/local/bin"
+  "autocomplete-plus": {}
+  autosave:
+    enabled: true
+  core:
+    disabledPackages: [
+      "spell-check"
+      "language-gfm"
+      "react"
+      "language-javascript-jsx"
+      "emmet"
+      "atom-live-server"
+      "atom-react-native-css"
+      "color-picker"
+      "highlight-selected"
+    ]
+    packagesWithKeymapsDisabled: [
+      "lisp-paredit"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
+  editor:
+    fontSize: 12
+    invisibles: {}
+    scrollPastEnd: true
+    showInvisibles: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "90a00338-d9da-388e-5cf3-71f92890ed3b"
+  "linter-ui-default": {}
+  "lisp-paredit":
+    indentationForms: [
+      "try"
+      "catch"
+      "finally"
+      "let"
+      "are"
+      "/^def.*/"
+      "fn"
+      "cond"
+      "if"
+      "if-let"
+      "for"
+      "/when.*/"
+      "testing"
+      "doseq"
+      "dotimes"
+      "loop"
+      "ns"
+    ]
+  "markdown-preview":
+    breakOnSingleNewline: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
+  "proto-repl":
+    autoPrettyPrint: true
+  "spell-check": {}
+  "tree-view": {}
+  "vim-mode-plus":
+    useClipboardAsDefaultRegister: true
+  "vim-mode-plus-ex-mode":
+    notifiedUseExMode: true
+  welcome:
+    showOnStartup: false
+".clojure.source":
+  editor:
+    nonWordCharacters: "()\"':,;~@#$%^&{}[]`"
+    tabLength: 1

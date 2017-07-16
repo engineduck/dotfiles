@@ -175,7 +175,11 @@ end
 
 def install_spacemacs
   system %Q{brew tap railwaycat/emacsmacport}
-  systen %Q{brew install emacs-plus}
-  systen %Q{brew linkapps emacs-plus}
+  system %Q{brew install emacs-mac}
   system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
+end
+
+def install_atom
+  system %Q{brew install atom}
+  system %Q{ln -s $PWD/.atom $HOME/.atom}
 end
