@@ -42,13 +42,8 @@ unsetopt correct_all
 # a few aliases I like
 alias gs='git status'
 alias gd='git diff'
-alias vimrc='vim ~/.vimrc'
-
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias n='/usr/local/bin/nvim'
-
-# for lilypond
-export PATH=$PATH:~/bin
 
 # for nvim
 export LANG="en_US.UTF-8"
+alias vim='/usr/local/bin/nvim'
+alias vi='/usr/local/bin/nvim'

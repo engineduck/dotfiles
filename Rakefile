@@ -6,14 +6,15 @@ task :vim do
   install_vimplug
 end
 
+desc "install neovim and plugins"
+task :neovim do
+  install_neovim
+  install_neovim_plug
+end
+
 desc "install leiningen"
 task :clojure do
   install_clojure
-end
-
-desc "install YouCompleteMe for vim"
-task :completion do
-  install_completion
 end
 
 desc "install brew and applications"
@@ -30,8 +31,7 @@ desc "install the dot files into user's home directory"
 task :install do
   install_oh_my_zsh
   switch_to_zsh
-  install_vimplug
-  install_spacemacs
+  install_neovim_plug
   replace_all = false
   files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh Tomorrow\ Night.itermcolors]
   files.each do |file|
@@ -118,17 +118,6 @@ def install_oh_my_zsh
   end
 end
 
-def install_vundle
-  if File.exist?(File.join(ENV['HOME'], ".vim", "bundle", "Vundle.vim"))
-    puts "found ~/.vim/bundle/Vundle.vim"
-  else
-    puts "installing vundle"
-    system %Q{git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"}
-  end
-  puts "installing vundle plugins (causes flashing)"
-  system %Q{vim +PluginClean +PluginInstall +qall}
-end
-
 def install_vimplug
   if File.exist?(File.join(ENV['HOME'], ".vim", "autoload", "plug.vim"))
     puts "found ~/.vim/autoload/plug.vim"
@@ -141,9 +130,20 @@ def install_vimplug
   system %Q{vim +PlugClean! +PlugUpgrade +PlugUpdate +PlugInstall +qall}
 end
 
-def install_completion
-  system %Q{~/.vim/plugged/YouCompleteMe/install.py --tern-completer}
-  puts "compiling YouCompleteMe"
+def install_neovim
+  system %Q{brew install neovim}
+end
+
+def install_neovim_plug
+  if File.exist?(File.join(ENV['HOME'], ".local", "share", "nvim", "site", "autoload", "plug.vim"))
+    puts "found ~/.local/share/nvim/site/autoload/plug.vim"
+  else
+    puts "installing vim-plug"
+
+    system %Q{curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim}
+  end
+  system %Q{nvim +PlugClean! +PlugUpgrade +PlugUpdate +PlugInstall +qall}
 end
 
 def install_clojure
@@ -153,8 +153,6 @@ end
 def install_brew
   system %Q{/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"}
   system %Q{brew install zsh}
-  system %Q{brew install macvim}
-  system %Q{brew install neovim}
   system %Q{brew install node}
   system %Q{brew install ruby}
   system %Q{brew install python}
@@ -173,13 +171,3 @@ def install_brew_cask
   system %Q{brew cask install dropbox}
 end
 
-def install_spacemacs
-  system %Q{brew tap railwaycat/emacsmacport}
-  system %Q{brew install emacs-mac}
-  system %Q{git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d}
-end
-
-def install_atom
-  system %Q{brew install atom}
-  system %Q{ln -s $PWD/.atom $HOME/.atom}
-end
