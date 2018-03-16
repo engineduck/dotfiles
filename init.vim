@@ -67,3 +67,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
 " stop that window from popping up
 map q: :q
+
+" leader is space
+nnoremap <Space> <nop>
+let mapleader="\<Space>"
